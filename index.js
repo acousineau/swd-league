@@ -7,6 +7,10 @@ app.get('/', (req, res) => {
   res.send({ hi: 'there' })
 })
 
+app.get('/help', (req, res) => {
+  res.send({ help: 'me' })
+})
+
 app.listen(PORT, () => {
   console.log(`App running on port: ${PORT}`)
 })
