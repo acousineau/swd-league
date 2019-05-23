@@ -1,22 +1,16 @@
+const express = require('express')
+const router = express.Router()
 const passport = require('passport')
 
-module.exports = app => {
-  // Google authentication routes
-  app.get(
-    '/auth/google',
-    passport.authenticate('google', {
-      scope: ['profile', 'email']
-    })
-  )
-
-  app.get('/auth/google/callback', passport.authenticate('google'))
-
-  // User API
-  app.get('/api/user/details', (req, res) => {
-    res.send(req.user)
+// Google authentication routes
+router.get(
+  '/google',
+  passport.authenticate('google', {
+    scope: ['profile', 'email']
   })
-  app.get('/api/user/signout', (req, res) => {
-    req.logout()
-    res.send(req.user)
-  })
-}
+)
+router.get('/google/callback', passport.authenticate('google'), (req, res) => {
+  res.redirect('/dashboard')
+})
+
+module.exports = router
