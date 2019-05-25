@@ -7,12 +7,12 @@ const passport = require('passport') // Tell passport to use cookies
 
 const config = require('./config/keys')
 
-const authRoutes = require('./routes/auth')
-const usersRoutes = require('./routes/users')
-
 // Run code in following sources
 require('./models/User')
 require('./services/passport')
+
+const authRoutes = require('./routes/auth')
+const usersRoutes = require('./routes/users')
 
 const app = express()
 
@@ -20,7 +20,7 @@ const app = express()
 mongoose.connect(config.mongoConnection, { useNewUrlParser: true })
 
 // Middelware
-app.use(morgan('combined'))
+app.use(morgan('tiny'))
 app.use(cors())
 app.use(express.json())
 // Use Cookies

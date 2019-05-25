@@ -11,7 +11,9 @@ const App = props => {
     <UserContext.Provider value={useReducer(UserReducer, UserContextState)}>
       <Router>
         <Header />
-        <AppContainer />
+        <div className="container">
+          <AppContainer />
+        </div>
       </Router>
     </UserContext.Provider>
   )

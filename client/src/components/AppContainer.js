@@ -10,13 +10,15 @@ import { fetchUser } from '../user/actions'
 
 const AppContainer = props => {
   const dispatch = useContext(UserContext)[1]
+
   // This acts similarly to how componentDidMount functions
   useEffect(() => {
     fetchUser(dispatch)
-  }, [dispatch])
+    // eslint-disable-next-line
+  }, [])
 
   return (
-    <div className="App container mx-auto">
+    <div className="">
       <Route exact path="/" component={Welcome} />
       <Route path="/signin" component={SignIn} />
       <Route path="/signup" component={SignIn} />
