@@ -6,7 +6,8 @@ const userSchema = new Schema({
   discord: {
     id: String,
     username: String,
-    avatar: String
+    avatar: String,
+    discriminator: String
   }
 })
 

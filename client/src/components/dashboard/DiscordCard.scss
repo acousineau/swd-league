@@ -1,0 +1,34 @@
+.DiscordCard {
+  .discord-section {
+    > * {
+      vertical-align: top;
+    }
+  }
+  .discord {
+    background: #7289da;
+
+    &:hover {
+      background: lighten(#7289da, 5%);
+    }
+  }
+  .card-image {
+    background-color: #7289da;
+    padding-top: 33%,
+  }
+  .avatar {
+    position: absolute;
+    right: 24px;
+    bottom: -20px;
+    z-index: 1;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    box-shadow:
+      0 2px 2px 0 rgba(0, 0, 0, 0.14), 
+      0 3px 1px -2px rgba(0, 0, 0, 0.12), 
+      0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  }
+}

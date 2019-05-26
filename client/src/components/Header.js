@@ -1,4 +1,4 @@
-import React, { Fragment, useContext, useState } from 'react'
+import React, { Fragment, useContext } from 'react'
 import { Link } from 'react-router-dom'
 
 import UserContext from '../user/context'
@@ -36,7 +36,6 @@ const renderControls = user => {
 
 const Header = () => {
   const userState = useContext(UserContext)[0]
-  const [menuOpen, toggleMenuOpen] = useState(false)
   return (
     <nav className="Header">
       <div className="row">
@@ -44,12 +43,12 @@ const Header = () => {
           <div className="nav-wrapper">
             <div className="nav-logo">
               <i className="fas fa-jedi" />
-              <Link to="/" className="">
-                Star Wars Destiny League
+              <Link to="/" style={{ fontSize: '25px' }}>
+                SWD League
               </Link>
               <i className="fab fa-galactic-republic" />
             </div>
-            <ul className="right hide-on-med-and-down">
+            <ul className="right hide-on-small-and-down">
               <li>
                 <Link to="/leagues" className="">
                   Leagues

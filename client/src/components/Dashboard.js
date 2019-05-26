@@ -1,18 +1,31 @@
 import React, { useContext } from 'react'
 import UserContext from '../user/context'
 
+import DiscordCard from './dashboard/DiscordCard'
+import UserInfo from './dashboard/UserInfo'
+
+import './Dashboard.scss'
+
 const Dashboard = props => {
   const userState = useContext(UserContext)[0]
+  const discordUser = userState.user && userState.user.discord
+  const displayName = userState.user && userState.user.discord && userState.user.discord.username
+
   return (
-    <div>
-      <h2>Dashboard</h2>
-      <a
-        className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded mx-auto inline-block"
-        href="/auth/discord"
-      >
-        <i className="fab fa-discord" />
-        &nbsp;&nbsp;Connect Discord
-      </a>
+    <div className="Dashboard">
+      <div className="row">
+        <div className="col s12">
+          <h4>Dashboard</h4>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col s4">
+          <DiscordCard discordUser={discordUser} />
+        </div>
+        <div className="col s8">
+          <UserInfo displayName={displayName} />
+        </div>
+      </div>
     </div>
   )
 }

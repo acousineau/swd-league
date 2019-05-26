@@ -96,6 +96,7 @@ passport.use(
       callbackURL: '/auth/discord/callback'
     },
     async (accessToken, refreshToken, profile, done) => {
+      console.log(profile)
       done(null, profile)
     }
   )

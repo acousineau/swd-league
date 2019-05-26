@@ -32,14 +32,15 @@ router.get(
   createCurrentUser,
   passport.authenticate('discord', { session: false }),
   async (req, res, next) => {
-    const { id, username, avatar } = req.user
+    const { id, username, avatar, discriminator } = req.user
     const updatedUser = await User.findOneAndUpdate(
       { _id: req.currentUser._id },
       {
         discord: {
           id,
           username,
-          avatar
+          avatar,
+          discriminator
         }
       },
       { new: true }
