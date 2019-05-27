@@ -11,6 +11,10 @@
     * If branch does exist remotely
         * `git push`
 
+**TODO** - Add documentation for updating branch with latest changes to master
+
+**TODO** - Add documentation for ensuring master is up to date locally
+
 
 # Starting Dev Server
 
