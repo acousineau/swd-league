@@ -14,7 +14,7 @@
 * Updating branch w/latest changes to master
     * Update your local master branch
         * `git checkout master` - Switches from current branch to master
-        * `git fetch -p origin` - Brings branches and their commits from remote.
+        * `git fetch -p origin` - Updates local references of branches with their remote counterparts
             * Can use -p (--prune) to delete any remote-tracking references that no longer exist in remote
         * `git merge origin/master` - Merge changes from remote to your local master
     * Update feature branch with local master
@@ -25,7 +25,7 @@
 * Ensuring master is up to date locally
     * Make sure you have master currently checked out
         * **If NOT** `git checkout master`
-    * `git push` - Does both `git fetch` & `git merge` in one command
+    * `git pull` - Does both `git fetch` & `git merge` in one command
 
 
 # Starting Dev Server
