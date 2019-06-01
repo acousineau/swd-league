@@ -1,0 +1,47 @@
+.SignIn {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+
+  .signin-card {
+    width: 50%;
+    background-color: rgb(44, 57, 58);
+    box-shadow:
+        0 2px 2px 0 rgba(0, 0, 0, 0.14), 
+        0 3px 1px -2px rgba(0, 0, 0, 0.12), 
+        0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  .signin-card-title {
+    padding-left: 4%;
+    padding-top: 4%; 
+    font-size: 24px;
+    font-weight: 300;
+    font-weight: 400;
+    color: white;
+    &.activator {
+      cursor: pointer;
+    }
+  }
+  
+  .signin-text {
+    padding: 0 4% 2% 4%;
+    color: white;
+    border-top: 1px solid rgba(223, 223, 223, 0.2);
+  }
+  
+  .signin-card-action {
+    background-color: white;
+    padding: 6%;
+    font-size: 20px;
+    
+    a:not(.btn):not(.btn-large):not(.btn-floating) {
+      transition: color .3s ease;
+      text-transform: uppercase;
+      font-weight: 450;
+      &:hover { color: green }
+    }
+  }
+}
