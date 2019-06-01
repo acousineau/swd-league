@@ -18,7 +18,7 @@ const AppContainer = props => {
   }, [])
 
   return (
-    <div className="">
+    <div className="AppContainer">
       <Route exact path="/" component={Welcome} />
       <Route path="/signin" component={SignIn} />
       <Route path="/signup" component={SignIn} />

@@ -1,0 +1,9 @@
+@import "styles/components/core";
+
+html, body, #root {
+  height: 100%;
+}
+
+.container, .AppContainer {
+  height: calc(100% - #{$navbar-height});
+}

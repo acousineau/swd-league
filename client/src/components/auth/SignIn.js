@@ -1,10 +1,10 @@
 import React from 'react'
 
-import './Signin.scss'
+import './SignIn.scss'
 
 const SignIn = props => {
   return (
-    <div className="signin-container">
+    <div className="SignIn">
       <div className="signin-card">
         <div className="signin-card-title">Please Sign In With Google</div>
         <p className="signin-text">
