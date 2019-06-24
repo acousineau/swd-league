@@ -1,7 +1,13 @@
 .Header {
-  .nav-bar {
+
+  .nav-wrapper {
     background-color: rgb(95, 95, 95);
     margin: 0px;
+    padding: 10px;
+  }
+
+  .main-nav {
+    text-align: right;
   }
 
   .nav-logo {
@@ -10,5 +16,13 @@
     > * {
       margin-right: 10px;
     }
+  }
+
+  a {
+    //color: rgb(255, 255, 255);
+  }
+
+  li {
+    display: inline-block;
   }
 }

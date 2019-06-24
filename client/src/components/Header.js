@@ -38,8 +38,8 @@ const Header = () => {
   const userState = useContext(UserContext)[0]
   return (
     <nav className="Header">
-      <div className="l-grid nav-bar">
-        <div className="nav-wrappe l-row">
+      <div className="nav-wrapper">
+        <div className="l-row">
           <div className="nav-logo l-col-8">
             <i className="fas fa-jedi" />
             <Link to="/" style={{ fontSize: '25px' }}>
@@ -47,7 +47,7 @@ const Header = () => {
             </Link>
             <i className="fab fa-galactic-republic" />
           </div>
-          <div className="l-col-4">
+          <div className="l-col-4 main-nav">
             <ul className="right hide-on-small-and-down">
               <li>
                 <Link to="/leagues" className="">
