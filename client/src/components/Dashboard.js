@@ -13,8 +13,8 @@ const Dashboard = props => {
 
   return (
     <div className="Dashboard">
-      <div className="row">
-        <div className="col s12">
+      <div className="l-row">
+        <div className="l-col-4">
           <h4>Dashboard</h4>
         </div>
       </div>
