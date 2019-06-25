@@ -13,17 +13,19 @@ const Dashboard = props => {
 
   return (
     <div className="Dashboard">
-      <div className="l-row">
-        <div className="l-col-4">
+      <div className="l-grid">
+        <div className="l-row">
           <h4>Dashboard</h4>
         </div>
       </div>
-      <div className="row">
-        <div className="col s4">
-          <DiscordCard discordUser={discordUser} />
-        </div>
-        <div className="col s8">
-          <UserInfo displayName={displayName} />
+      <div className="l-grid">
+        <div className="l-row">
+          <div className="l-col-8">
+            <DiscordCard discordUser={discordUser} />
+          </div>
+          <div className="l-col-4">
+            <UserInfo displayName={displayName} />
+          </div>
         </div>
       </div>
     </div>

@@ -6,7 +6,7 @@ const DiscordCard = props => {
   const { discordUser } = props
   return (
     <div className="DiscordCard card">
-      <div className="card-image">
+      <div className="l-col-6 card-image">
         <h4 className="card-title">Discord Connection</h4>
         {discordUser && (
           <div
@@ -19,8 +19,8 @@ const DiscordCard = props => {
           />
         )}
       </div>
-      <div className="row card-content">
-        <div className="discord-section col s12">
+      <div className="card-content">
+        <div className="discord-section">
           <a href="/auth/discord" className="btn waves-effect waves-light discord">
             <i className="fab fa-discord" style={{ fontSize: '20px' }} />
             <span style={{ position: 'relative', top: '-2px' }}>

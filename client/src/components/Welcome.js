@@ -1,7 +1,13 @@
 import React from 'react'
 
 const Welcome = () => {
-  return <div>Welcome to the application!</div>
+  return (
+    <div className="l-grid">
+      <div className="l-row">
+        <div>Welcome to the application!</div>
+      </div>
+    </div>
+  )
 }
 
 export default Welcome
