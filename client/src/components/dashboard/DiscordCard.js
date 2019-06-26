@@ -6,7 +6,7 @@ const DiscordCard = props => {
   const { discordUser } = props
   return (
     <div className="DiscordCard card">
-      <div className="l-col-6 card-image">
+      <div className="card-image">
         <h4 className="card-title">Discord Connection</h4>
         {discordUser && (
           <div
@@ -28,7 +28,7 @@ const DiscordCard = props => {
             </span>
           </a>
           {discordUser && (
-            <i className="material-icons green-text" style={{ fontSize: '3rem' }}>
+            <i className="material-icons green-text" style={{ fontSize: '3rem', color: '#209e00' }}>
               check
             </i>
           )}

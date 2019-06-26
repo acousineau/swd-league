@@ -1,22 +1,39 @@
+$box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 
+0 3px 1px -2px rgba(0, 0, 0, 0.12), 
+0 1px 5px 0 rgba(0, 0, 0, 0.2);
+
 .DiscordCard {
+  box-shadow: $box-shadow;
+
+  text-align: center;
+
   .discord-section {
     > * {
       vertical-align: top;
     }
+    padding: 15px 0;
   }
   .discord {
     background: #7289da;
-
+    padding: 10px;
+    display: inline-block;
+    border-radius: 3px;
+    box-shadow: $box-shadow;
+    color: white;
     &:hover {
       background: lighten(#7289da, 5%);
     }
   }
   .card-image {
     background-color: #7289da;
-    padding-top: 33%,
+    padding: 15% 0,
+
   }
   .avatar {
-    right: 24px;
+    float: right;
+    position: relative;
+    left: 8px;
+    bottom: 4px;
     z-index: 1;
     display: inline-block;
     width: 50px;
@@ -24,9 +41,6 @@
     background-size: cover;
     background-position: center;
     border-radius: 50%;
-    box-shadow:
-      0 2px 2px 0 rgba(0, 0, 0, 0.14), 
-      0 3px 1px -2px rgba(0, 0, 0, 0.12), 
-      0 1px 5px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: $box-shadow;
   }
 }

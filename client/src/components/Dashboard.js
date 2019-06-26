@@ -20,10 +20,10 @@ const Dashboard = props => {
       </div>
       <div className="l-grid">
         <div className="l-row">
-          <div className="l-col-8">
+          <div className="l-col-3">
             <DiscordCard discordUser={discordUser} />
           </div>
-          <div className="l-col-4">
+          <div className="l-col-6">
             <UserInfo displayName={displayName} />
           </div>
         </div>
