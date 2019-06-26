@@ -39,7 +39,7 @@ const Header = () => {
       <div className="nav-wrapper l-row">
         <div className="nav-logo">
           <i className="fas fa-jedi" />
-          <Link to="/" style={{ fontSize: '25px' }}>
+          <Link to="/" className="home-link" style={{ fontSize: '25px' }}>
             SWD League
           </Link>
           <i className="fab fa-galactic-republic" />

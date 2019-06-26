@@ -4,14 +4,14 @@ $box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
 
 .DiscordCard {
   box-shadow: $box-shadow;
-
+  color: white;
   text-align: center;
 
   .discord-section {
     > * {
       vertical-align: top;
     }
-    padding: 15px 0;
+    padding: 12% 0,
   }
   .discord {
     background: #7289da;
@@ -26,16 +26,13 @@ $box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
   }
   .card-image {
     background-color: #7289da;
-    padding: 15% 0,
+    padding: 12% 0,
 
   }
   .avatar {
     float: right;
     position: relative;
-    left: 8px;
-    bottom: 4px;
-    z-index: 1;
-    display: inline-block;
+    right: 12px;
     width: 50px;
     height: 50px;
     background-size: cover;

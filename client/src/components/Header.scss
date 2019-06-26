@@ -2,7 +2,7 @@
 
   .nav-wrapper {
     background-color: rgb(95, 95, 95);
-    padding: 10px 10px 0 10px;
+    padding: 10px 10px 0 25px;
     color: white;
     height: 64px;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 
@@ -30,11 +30,18 @@
 
   a {
     color: rgb(255, 255, 255);
+
+    &:hover {
+        color: #b8b8b8;
+      }
+  }
+
+  .home-link:hover {
+    color: white;
   }
 
   li {
     float: right;
-    display: inline-block;
     text-align: center;
     padding: 10px;
     width: 100px;

@@ -15,7 +15,7 @@ const Dashboard = props => {
     <div className="Dashboard">
       <div className="l-grid">
         <div className="l-row">
-          <h4>Dashboard</h4>
+          <h4 className="l-col-12 dashboard-header">Dashboard</h4>
         </div>
       </div>
       <div className="l-grid">
