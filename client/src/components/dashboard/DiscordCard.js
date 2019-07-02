@@ -19,8 +19,8 @@ const DiscordCard = props => {
           />
         )}
       </div>
-      <div className="row card-content">
-        <div className="discord-section col s12">
+      <div className="card-content">
+        <div className="discord-section">
           <a href="/auth/discord" className="btn waves-effect waves-light discord">
             <i className="fab fa-discord" style={{ fontSize: '20px' }} />
             <span style={{ position: 'relative', top: '-2px' }}>
@@ -28,7 +28,7 @@ const DiscordCard = props => {
             </span>
           </a>
           {discordUser && (
-            <i className="material-icons green-text" style={{ fontSize: '3rem' }}>
+            <i className="material-icons green-text" style={{ fontSize: '3rem', color: '#209e00' }}>
               check
             </i>
           )}

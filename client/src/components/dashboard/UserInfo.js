@@ -1,11 +1,16 @@
 import React from 'react'
 
+import './UserInfo.scss'
+
 const UserInfo = props => {
   const { displayName } = props
   return (
     <form className="UserInfo">
       <div className="row">
         <div className="input-field col s12">
+          <label htmlFor="name" className="active">
+            Display Name
+          </label>
           <input
             placeholder="Display Name"
             id="name"
@@ -13,9 +18,6 @@ const UserInfo = props => {
             className="validate"
             defaultValue={displayName || ''}
           />
-          <label htmlFor="name" className="active">
-            Display Name
-          </label>
         </div>
       </div>
     </form>
