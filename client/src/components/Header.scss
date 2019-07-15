@@ -1,5 +1,4 @@
 .Header {
-
   .nav-wrapper {
     background-color: rgb(95, 95, 95);
     padding: 10px 10px 0 25px;
@@ -10,8 +9,69 @@
       0 1px 5px 0 rgba(0, 0, 0, 0.2);
   }
 
+  .menu-wrap {
+    display: flex;
+    position: fixed;
+    padding: 0;
+    right: 0%;
+    top: 0%;
+    z-index: 1;
+    .toggler {
+      position: absolute;
+      right: 0%;
+      top: 10px;
+      z-index: 2;
+      cursor: pointer;
+      width: 50px;
+      height: 50px;
+      opacity: 0;
+      &:checked ~ .main-menu {
+      right: 0;
+      transition: all 0.4s ease;
+      }
+      &:checked + .hamburger > div {
+        transform:  rotate(135deg);
+        
+        &::before, &::after {
+          top: 0;
+          transform: rotate(90deg);
+        }
+      }
+    }
+    .hamburger {
+      position: absolute;
+      right: 0%;
+      top: 10px;
+      z-index: 1;
+      cursor: pointer;
+      width: 60px;
+      height: 60px;
+      padding: 1rem;
+      > div {
+        position: relative;
+        width: 100%;
+        height: 3px;
+        background-color: white;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.4s ease;
+      }
+      > div:before, > div:after {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        top: -10px;
+        width: 100%;
+        height: 3px;
+        background: inherit;
+      }
+      > div:after {
+        top: 10px;
+      }
+    }
+  }
+
   .nav-logo {
-    display: inline-block;
     width: calc(100% - 320px);
 
     > * {
@@ -19,9 +79,14 @@
     }
   }
 
-  .main-nav {
-    width: 320px;
-    text-align: center;
+  .main-menu {
+    position: absolute;
+    transition: all 0.4s ease;
+    top: 0;
+    right: -130px;
+    width: 130px;
+    padding: 50px 0 30px 0;
+    background-color: rgb(139, 139, 139);
   }
 
   i {
@@ -40,14 +105,12 @@
     color: white;
   }
 
-  li {
-    float: right;
-    text-align: center;
-    padding: 10px;
-    width: 100px;
-  }
-
-  .sign-in {
-    width: 200px;
+  .nav-items {
+    padding: 5px;
+    li {
+      padding: 10px 20px;
+      display: flex;      
+      flex-direction: row-reverse;
+    }
   }
 }

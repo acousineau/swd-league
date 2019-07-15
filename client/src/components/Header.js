@@ -11,21 +11,21 @@ const renderControls = user => {
   } else if (user === false) {
     return (
       <li className="sign-in">
-        <Link to="/signin">Sign In With Google</Link>
+        <Link to="/signin">Sign In</Link>
       </li>
     )
   } else {
     return (
       <Fragment>
         <li>
-          <a href="/api/users/signout" className=" mr-2">
-            Sign Out
-          </a>
-        </li>
-        <li>
           <Link to="/dashboard" className=" mr-2">
             Dashboard
           </Link>
+        </li>
+        <li>
+          <a href="/api/users/signout" className=" mr-2">
+            Sign Out
+          </a>
         </li>
       </Fragment>
     )
@@ -44,15 +44,22 @@ const Header = () => {
           </Link>
           <i className="fab fa-galactic-republic" />
         </div>
-        <div className="main-nav">
-          <ul className="right hide-on-small-and-down l-col-12">
-            {renderControls(userState.user)}
-            <li>
-              <Link to="/leagues" className="">
-                Leagues
-              </Link>
-            </li>
-          </ul>
+
+        <div className="menu-wrap">
+          <input type="checkbox" className="toggler" />
+          <div className="hamburger">
+            <div />
+          </div>
+          <div className="main-menu">
+            <ul className="nav-items">
+              <li>
+                <Link to="/leagues" className="">
+                  Leagues
+                </Link>
+              </li>
+              {renderControls(userState.user)}
+            </ul>
+          </div>
         </div>
       </div>
     </nav>
