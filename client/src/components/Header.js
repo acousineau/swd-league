@@ -10,7 +10,7 @@ const renderControls = user => {
     return
   } else if (user === false) {
     return (
-      <li className="sign-in">
+      <li id="sign-in">
         <Link to="/signin">Sign In</Link>
       </li>
     )
@@ -36,7 +36,8 @@ const Header = () => {
   const userState = useContext(UserContext)[0]
   return (
     <nav className="Header">
-      <div className="nav-wrapper l-row">
+      <div className="header-wrapper" />
+      <div className="nav-wrapper">
         <div className="nav-logo">
           <i className="fas fa-jedi" />
           <Link to="/" className="home-link" style={{ fontSize: '25px' }}>
