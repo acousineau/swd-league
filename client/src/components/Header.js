@@ -49,7 +49,8 @@ const Header = () => {
           <div className="menu-wrap">
             <input type="checkbox" className="toggler" />
             <div className="hamburger">
-              <div />
+              <div className="jedi-saber" />
+              <div className="sith-saber" />
             </div>
             <div className="main-menu">
               <ul className="nav-items">
