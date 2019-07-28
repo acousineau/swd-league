@@ -76,7 +76,9 @@ passport.use(
 
       // we don't have a record - we need to sign up this user
       const user = await new User({
-        googleId: profile.id
+        googleId: profile.id,
+        email: profile.email,
+        name: profile.name
       }).save()
 
       done(null, user)
