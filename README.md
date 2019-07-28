@@ -39,3 +39,28 @@
 * `cd <repo>/client` - Change into FE directory
 * `yarn install` - Installs dependencies - should only be needed once unless you install new dependencies
 * `yarn start` - Starts local development server at http://localhost:3000
+
+# Features
+
+* Navigation
+    * Add link to sidebar to create a league
+    * Create a new route/page with the league creation form
+
+* League Creation Form Page
+    * Name of League
+    * Start Date - Calendar
+    * End Date - Calendar
+    * Win Points - Number Field - Default 1
+    * Match Points - Number Field - Default 1
+    * Players within league - list of players in the DB - Multi-select input search
+        * Array of player objects should look like this
+```javascript
+[{
+    name,
+    email,
+    discord: {
+        username,
+        avatar
+    }
+}]
+```
