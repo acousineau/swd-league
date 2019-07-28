@@ -1,0 +1,35 @@
+@function rem($size) {
+  @if ($size == 0) {
+    @return 0;
+  } @else {
+    $rem-size: $size / 16px;
+    @return #{$rem-size}rem;
+  }
+}
+
+// Breakpoint Lookup Function
+@function bp($bp) {
+  @return map-get($breakpoints, $bp);
+}
+
+// Define a Responsive Breakpoint
+@mixin breakpoint($min: 0, $max: 9999px) {
+  @media (min-width: #{$min}) and (max-width: #{$max}) {
+    @content;
+  }
+}
+
+// Define a Responsive Breakpoint from $min up
+@mixin breakpoint-min($min) {
+  @include breakpoint(($min + 1)) {
+    @content;
+  }
+}
+
+// Define a Responsive Breakpoint from 0 to $max
+@mixin breakpoint-max($max) {
+  @include breakpoint(0, $max) {
+    @content;
+  }
+}
+

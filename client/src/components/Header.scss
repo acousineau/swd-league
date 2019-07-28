@@ -1,6 +1,8 @@
 .Header {
 
   .nav-wrapper {
+    position: fixed;
+    width: 100%;
     background-image: linear-gradient(rgb(120, 120, 120), rgb(40, 40, 40));
     padding: 10px 10px 0 30px;
     color: white;
@@ -97,7 +99,7 @@
     }
 
     .hamburger {
-      position: absolute;
+      position: fixed;
       right: 10px;
       top: 14px;
       z-index: 1;

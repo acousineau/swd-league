@@ -13,7 +13,7 @@ const SignIn = props => {
                 Users must log in with Google in order to use the application.
               </p>
               <div className="row">
-                <a className="sign-in-card-cta" href="/auth/google">
+                <a className="sign-in-card-cta button" href="/auth/google">
                   <i className="fab fa-google" />
                   &nbsp;&nbsp;Sign In with Google
                 </a>
