@@ -17,32 +17,6 @@ body {
   margin: 0;
 }
 
-// Breakpoint Lookup Function
-@function bp($bp) {
-  @return map-get($breakpoints, $bp);
-}
-
-// Define a Responsive Breakpoint
-@mixin breakpoint($min: 0, $max: 9999px) {
-  @media (min-width: #{$min}) and (max-width: #{$max}) {
-    @content;
-  }
-}
-
-// Define a Responsive Breakpoint from $min up
-@mixin breakpoint-min($min) {
-  @include breakpoint(($min + 1)) {
-    @content;
-  }
-}
-
-// Define a Responsive Breakpoint from 0 to $max
-@mixin breakpoint-max($max) {
-  @include breakpoint(0, $max) {
-    @content;
-  }
-}
-
 @each $margin-padding, $mp in ('margin' 'l-m') ('padding' 'l-p') {
   @each $direction, $d, $hv in ('top' 't' 'v') ('left' 'l' 'h') ('bottom' 'b' 'v') ('right' 'r' 'h') {
     @each $size, $s in
