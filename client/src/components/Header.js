@@ -10,20 +10,22 @@ const renderControls = user => {
     return
   } else if (user === false) {
     return (
-      <li id="sign-in">
-        <Link to="/signin">Sign In</Link>
+      <li>
+        <Link to="/signin" className="sign-in">
+          Sign In
+        </Link>
       </li>
     )
   } else {
     return (
       <Fragment>
         <li>
-          <Link to="/dashboard" className=" mr-2">
+          <Link to="/dashboard" className="">
             Dashboard
           </Link>
         </li>
         <li>
-          <a href="/api/users/signout" className=" mr-2">
+          <a href="/api/users/signout" className="sign-out">
             Sign Out
           </a>
         </li>
@@ -37,7 +39,7 @@ const Header = () => {
   return (
     <nav className="Header">
       <div className="header-wrapper">
-        <div className="nav-wrapper">
+        <div className="nav-wrapper ">
           <div className="nav-logo">
             <i className="fas fa-jedi" />
             <Link to="/" className="home-link" style={{ fontSize: '25px' }}>

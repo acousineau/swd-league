@@ -1,18 +1,107 @@
+@import "core";
+
 .Header {
+  
+  & * {
+    display: inline-block;
+  }
+
+  .header-wrapper {
+    height: ($nav-height + 10px);
+  }
 
   .nav-wrapper {
     position: fixed;
     width: 100%;
     background-image: linear-gradient(rgb(120, 120, 120), rgb(40, 40, 40));
-    padding: 10px 10px 0 30px;
+    padding: 10px 0 0 25px;
     color: white;
-    height: 64px;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 
-      0 3px 1px -2px rgba(0, 0, 0, 0.12), 
-      0 1px 5px 0 rgba(218, 62, 62, 0.2);
+    height: $nav-height;
+    z-index: 1;
+    box-shadow: $box-shadow;
+  }
+
+  .toggler {
+    opacity: 0;
+    position: absolute;
+  }
+
+  .nav-logo {
+    width: 40%;
+    height: $nav-height;
+    display: inline-block;
+
+    > * {
+      margin-right: 10px;
+    }
   }
 
   .menu-wrap {
+    width: 60%;
+    height: $nav-height;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    .main-menu {
+      position: absolute;
+      right: 0;
+      top: 0;
+
+      a {
+        padding: 15px;
+      }
+
+      .sign-out, .sign-in {
+        font-size: 14px;
+        margin: 0 5px 0 15px;
+      }
+  }
+  
+
+  }
+
+  i {
+    font-size: 28px;
+  }
+
+  a {
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    font-weight: 600;
+    
+    &:hover {
+        color: #b8b8b8;
+      }
+  }
+
+  .home-link:hover {
+    color: white;
+  }
+}
+
+// Break To Hamburger
+@include breakpoint-max(bp(medium)) {
+  
+  .Header {
+
+  .nav-logo {
+    width: 100%;
+  }
+
+  .menu-wrap {
+    width: 0;
+    
+
+    .main-menu {
+      transition: all 0.4s ease;
+      top: 0px;
+      width: 145px;
+      height: 2000px;
+      padding: 50px 0 10px 0;
+      box-shadow: $box-shadow;
+      background-color: rgb(139, 139, 139);
+    }
 
     .sith-saber {
       width: 20px;
@@ -21,24 +110,23 @@
     }
 
     .toggler {
-      position: absolute;
-      right: 0%;
-      top: 10px;
+      right: 5px;
+      top: 5px;
       z-index: 2;
       cursor: pointer;
       width: 50px;
       height: 50px;
-      opacity: 0;
 
       &:checked ~ .main-menu {
       right: 0;
+      
       }
 
       &:checked + .hamburger > .jedi-saber {
         transform:  rotate(135deg);
         top: -4px;
         left: -1px;
-        background-image: linear-gradient(red, rgb(255, 211, 211), red);
+        background-image: linear-gradient(red, rgb(255, 221, 221), red);
         height: 4px;
         width: 35px;
         border-radius: 3px;
@@ -71,10 +159,11 @@
         transition-delay: .1s;
         position: relative;
         background-image: linear-gradient(red, rgb(255, 211, 211), red);
+        
         height: 4px;
         border-radius: 40%;
-        top: 3px;
-        right: 4px;
+        top: -16px;
+        right: 6px;
         
         &::before {
           opacity: 1;
@@ -100,8 +189,8 @@
 
     .hamburger {
       position: fixed;
-      right: 10px;
-      top: 14px;
+      right: 5px;
+      top: 5px;
       z-index: 1;
       cursor: pointer;
       width: 60px;
@@ -131,7 +220,6 @@
         opacity: 0;
         position: absolute;
         z-index: 1;
-        top: -10px;
         width: 100%;
         height: 3px;
         background: inherit;
@@ -142,59 +230,5 @@
       }
     }
   }
-
-  .nav-logo {
-    width: 100%;
-
-    > * {
-      margin-right: 10px;
-    }
-  }
-
-  .main-menu {
-    position: absolute;
-    transition: all 0.4s ease;
-    top: 0;
-    right: -150px;
-    width: 145px;
-    height: 2000px;
-    padding: 50px 0 10px 0;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 
-      0 3px 1px -2px rgba(0, 0, 0, 0.12), 
-      0 1px 5px 0 rgba(0, 0, 0, 0.2);
-    background-color: rgb(139, 139, 139);
-  }
-
-  i {
-    font-size: 28px;
-  }
-
-  a {
-    color: rgb(255, 255, 255);
-    font-size: 18px;
-    font-weight: 600;
-    
-    &:hover {
-        color: #b8b8b8;
-      }
-  }
-
-  .home-link:hover {
-    color: white;
-  }
-
-  .nav-items {
-    padding: 15px 0;
-
-    li {
-      padding: 10px 30px;
-      display: flex;      
-      flex-direction: row-reverse;
-      text-shadow: 2px 2px rgb(129, 129, 129);
-    }
-  }
-
-  #sign-in {
-    padding: 15px 30px 5px 30px;
-  }
+}
 }
