@@ -1,4 +1,4 @@
-import React, { Fragment, useContext } from 'react'
+import React, { Fragment, useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import UserContext from '../user/context'
@@ -10,7 +10,7 @@ const renderControls = user => {
     return
   } else if (user === false) {
     return (
-      <li id="sign-in">
+      <li>
         <Link to="/signin">Sign In</Link>
       </li>
     )
@@ -18,14 +18,10 @@ const renderControls = user => {
     return (
       <Fragment>
         <li>
-          <Link to="/dashboard" className=" mr-2">
-            Dashboard
-          </Link>
+          <Link to="/dashboard">Dashboard</Link>
         </li>
         <li>
-          <a href="/api/users/signout" className=" mr-2">
-            Sign Out
-          </a>
+          <a href="/api/users/signout">Sign Out</a>
         </li>
       </Fragment>
     )
@@ -34,6 +30,8 @@ const renderControls = user => {
 
 const Header = () => {
   const userState = useContext(UserContext)[0]
+  const [open, toggleOpen] = useState(false)
+
   return (
     <nav className="Header">
       <div className="header-wrapper">
@@ -45,23 +43,42 @@ const Header = () => {
             </Link>
             <i className="fab fa-galactic-republic" />
           </div>
-
-          <div className="menu-wrap">
-            <input type="checkbox" className="toggler" />
-            <div className="hamburger">
-              <div className="jedi-saber" />
-              <div className="sith-saber" />
-            </div>
-            <div className="main-menu">
+          <div className="desktop-menu-wrap">
+            <div className="desktop-menu">
               <ul className="nav-items">
                 <li>
-                  <Link to="/leagues" className="">
-                    Leagues
-                  </Link>
+                  <Link to="/leagues">Leagues</Link>
                 </li>
                 {renderControls(userState.user)}
               </ul>
             </div>
+          </div>
+        </div>
+        <button
+          className={`hamburger ${open ? 'cross-sabers' : ''}`}
+          onClick={() => {
+            toggleOpen(!open)
+            console.log(open)
+          }}
+        >
+          <div className={`saber-container ${open ? 'close-menu' : ''}`}>
+            <div className={`saber-a ${open ? 'cross-guard' : ''}`} />
+            <div className={`saber-b ${open ? 'rey' : ''}`}>
+              <div className="rey-hilt-piece" />
+            </div>
+            <div className={`saber-c ${open ? 'kylo' : ''}`} />
+          </div>
+        </button>
+        <div className={`mobile-menu-wrap ${open ? 'show-mobile' : ''}`}>
+          <div className="mobile-menu">
+            <ul className="nav-items">
+              <li>
+                <Link to="/leagues" className="Leagues-link">
+                  Leagues
+                </Link>
+              </li>
+              {renderControls(userState.user)}
+            </ul>
           </div>
         </div>
       </div>

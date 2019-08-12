@@ -4,6 +4,8 @@ import { Route } from 'react-router-dom'
 import Welcome from '../components/Welcome'
 import Dashboard from '../components/Dashboard'
 import SignIn from '../components/auth/SignIn'
+import Leagues from '../components/Leagues'
+import NewLeague from '../components/NewLeague'
 
 import UserContext from '../user/context'
 import { fetchUser } from '../user/actions'
@@ -23,6 +25,8 @@ const AppContainer = props => {
       <Route path="/signin" component={SignIn} />
       <Route path="/signup" component={SignIn} />
       <Route path="/dashboard" component={Dashboard} />
+      <Route path="/leagues" component={Leagues} />
+      <Route path="/newleague" component={NewLeague} />
     </div>
   )
 }
