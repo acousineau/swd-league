@@ -11,23 +11,17 @@ const renderControls = user => {
   } else if (user === false) {
     return (
       <li>
-        <Link to="/signin" className="sign-in">
-          Sign In
-        </Link>
+        <Link to="/signin">Sign In</Link>
       </li>
     )
   } else {
     return (
       <Fragment>
         <li>
-          <Link to="/dashboard" className="">
-            Dashboard
-          </Link>
+          <Link to="/dashboard">Dashboard</Link>
         </li>
         <li>
-          <a href="/api/users/signout" className="sign-out">
-            Sign Out
-          </a>
+          <a href="/api/users/signout">Sign Out</a>
         </li>
       </Fragment>
     )
@@ -41,7 +35,7 @@ const Header = () => {
   return (
     <nav className="Header">
       <div className="header-wrapper">
-        <div className="desktop-nav-wrapper">
+        <div className="nav-wrapper">
           <div className="nav-logo">
             <i className="fas fa-jedi" />
             <Link to="/" className="home-link" style={{ fontSize: '25px' }}>
@@ -53,9 +47,7 @@ const Header = () => {
             <div className="desktop-menu">
               <ul className="nav-items">
                 <li>
-                  <Link to="/leagues" className="">
-                    Leagues
-                  </Link>
+                  <Link to="/leagues">Leagues</Link>
                 </li>
                 {renderControls(userState.user)}
               </ul>
@@ -69,7 +61,7 @@ const Header = () => {
             console.log(open)
           }}
         >
-          <div className="saber-container">
+          <div className={`saber-container ${open ? 'close-menu' : ''}`}>
             <div className={`saber-a ${open ? 'cross-guard' : ''}`} />
             <div className={`saber-b ${open ? 'rey' : ''}`}>
               <div className="rey-hilt-piece" />
