@@ -58,7 +58,6 @@ const Header = () => {
           className={`hamburger ${open ? 'cross-sabers' : ''}`}
           onClick={() => {
             toggleOpen(!open)
-            console.log(open)
           }}
         >
           <div className={`saber-container ${open ? 'close-menu' : ''}`}>

@@ -1,11 +1,11 @@
 import React, { useEffect, useContext } from 'react'
 import { Route } from 'react-router-dom'
 
-import Welcome from '../components/Welcome'
-import Dashboard from '../components/Dashboard'
-import SignIn from '../components/auth/SignIn'
-import Leagues from '../components/Leagues'
-import NewLeague from '../components/NewLeague'
+import Welcome from './pages/Welcome'
+import Dashboard from './pages/Dashboard'
+import SignIn from './pages/auth/SignIn'
+import Leagues from './pages/Leagues'
+import NewLeague from './pages/leagues/NewLeague'
 
 import UserContext from '../user/context'
 import { fetchUser } from '../user/actions'

@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import UserContext from '../user/context'
+import UserContext from '../../user/context'
 
 import DiscordCard from './dashboard/DiscordCard'
 import UserInfo from './dashboard/UserInfo'

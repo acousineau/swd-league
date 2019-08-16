@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 
-import UserContext from '../user/context'
+import UserContext from '../../user/context'
 
 import './Leagues.scss'
 
