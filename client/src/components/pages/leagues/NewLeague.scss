@@ -1,87 +1,133 @@
+@import "core";
+
 .NewLeague {
-
-  .intro {
-    width: 100%;
-    text-align: center;
-    padding: 0 0 20px 0;
-  }
-
-  label {
-    color: rgb(156, 170, 199);
-    font-size: 14px;
-    text-align: center;
-  }
-  
-  input {
-    text-align: center;
-  }
-
-  .react-datepicker-wrapper {
-    display: block;
-    margin: 0;
-  }
-
-  .react-datepicker, .pointInput {
-    display: flex;
+   
+  .form-container {
+    max-width: 700px;
     margin: auto;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: $box-shadow;
+
+    .form-section {
+      margin: 40px 0;
+        display: flex;
+        width: 100%;
+    }
+
+    .intro {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    label {
+      color: rgb(133, 149, 180);
+      font-size: 14px;
+      text-align: center;
+
+      input {
+        text-align: center;
+        background-color: rgb(247, 247, 247);
+        border-radius: 20px;
+      }
+    }
     
-    button {
-      font-size: 1px;
-      margin-top: 5px;
+    .savedName {
+      color: black;
+      font-size: 18px;
+      
+      .editName {
+        display: none;
+      } 
+    }
+
+    .nameSave {
+      float: right;
+      position: relative;
+      color: rgba(75, 27, 27, 0.425);
       background: none;
-    }
-    
-
-    .react-datepicker__navigation--previous {
-      width: 0;
-      height: 0;
-      border-top: 5px solid transparent;
-      border-right: 10px solid rgb(160, 160, 160);
-      border-bottom: 5px solid transparent;
+      font-size: 12px;
+      top: -45px;
     }
 
-    .react-datepicker__navigation--next {
-      width: 0;
-      height: 0;
-      border-top: 5px solid transparent;
-      border-left: 10px solid rgb(160, 160, 160);
-      border-bottom: 5px solid transparent;
-    }
-  }
-.pointCounters{
-  display: flex;
-  flex-direction: row;
+    .react-datepicker-wrapper {
+      display: block;
+      width: 180px;
+      margin: auto;
 
-    .points {
+      button {
+        font-size: 1px;
+        background: none;
+      }
+      
+      .react-datepicker__navigation--previous {
+        width: 0;
+        height: 0;
+        border-top: 5px solid transparent;
+        border-right: 10px solid rgb(160, 160, 160);
+        border-bottom: 5px solid transparent;
+      }
+  
+      .react-datepicker__navigation--next {
+        width: 0;
+        height: 0;
+        border-top: 5px solid transparent;
+        border-left: 10px solid rgb(160, 160, 160);
+        border-bottom: 5px solid transparent;
+      }
+    }
+
+    .pointCounters{
       display: flex;
       flex-direction: row;
-      width: 130px;
-      margin: auto;
-      .pointDisplay {
-        width: 60px;
-        color: black;
-        font-size: 22px;
-        font-weight: 400;
-      }
-
-      .pointInc, .pointDec {
-        background-color: rgb(187, 187, 187);
-        border: 1px solid rgb(158, 158, 158);
-        width: 35px;
-        height: 35px;
-        padding: 0;
-        font-size: 20px;
-        font-weight: 600;
-      }
-  }
-}
-
-  .savedName {
-    color: black;
-    font-size: 18px;
     
-    .editName {
-      display: none;
+      .pointsBox {
+        display: flex;
+        flex-direction: column;
+        width: 130px;
+        margin: 10px auto;
+
+        .points {
+          display: flex;
+          flex-direction: row-reverse;
+        
+          .pointDisplay {
+            width: 60px;
+            color: black;
+            font-size: 22px;
+            font-weight: 400;
+          }
+          
+          .pointInc, .pointDec {
+            background-color: rgb(187, 187, 187);
+            border: 1px solid rgb(158, 158, 158);
+            width: 35px;
+            height: 35px;
+            padding: 0;
+            font-size: 20px;
+            font-weight: 600;
+            box-shadow: $box-shadow
+          }
+        }
+      }  
     }
-  }
+
+    .submit {
+      display: flex;
+      align-content: center;
+      
+      .submitForm {
+        margin: auto;
+        background-color: rgb(153, 153, 153);
+        box-shadow: $box-shadow;
+        &:disabled {
+          display: none;
+        }
+      }
+    }
+  }    
 }
+  
+
+  

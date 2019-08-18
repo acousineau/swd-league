@@ -6,17 +6,17 @@ import UserContext from '../../user/context'
 import './Leagues.scss'
 
 const newLeague = user => {
-  // if (user === null || user === false) {
-  // return
-  // } else {
-  return (
-    <div className="l-col-3 new-button-container">
-      <Link to="/newleague" className="button  new-league-button">
-        CREATE NEW
-      </Link>
-    </div>
-  )
-  // }
+  if (user === null || user === false) {
+    return
+  } else {
+    return (
+      <div className="l-col-3 new-button-container">
+        <Link to="/newleague" className="button  new-league-button">
+          CREATE NEW
+        </Link>
+      </div>
+    )
+  }
 }
 
 const Leagues = () => {
