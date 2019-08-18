@@ -1,85 +1,65 @@
 import React, { useState } from 'react'
-import DayPickerInput from 'react-day-picker/DayPickerInput'
-import 'react-day-picker/lib/style.css'
+
 import './NewLeague.scss'
-
-function LeagueName({ name, setName, nameSaved, saveName }) {
-  const save = e => {
-    e.preventDefault()
-    if (!name) return
-    saveName(true)
-    return
-  }
-
-  const editName = e => {
-    saveName(false)
-  }
-
-  if (nameSaved !== true) {
-    return (
-      <form onSubmit={save}>
-        <input type="text" className="name" value={name} onChange={e => setName(e.target.value)} />
-      </form>
-    )
-  } else {
-    return (
-      <div className="savedName">
-        <h2>{name}</h2>
-        <button className="editName" onClick={editName}>
-          edit
-        </button>
-      </div>
-    )
-  }
-}
-
-function LeagueDates(startDate, setStart, endDate, setEnd) {
-  return (
-    <form>
-      <div className="l-row dates-select">
-        <div className="l-col-6 start-date">
-          <label>
-            Start Date
-            <DayPickerInput onDayChange={setStart} />
-          </label>
-        </div>
-        <div className="l-col-6 end-date">
-          <label>
-            End Date
-            <DayPickerInput onDayChange={setEnd} />
-          </label>
-        </div>
-      </div>
-    </form>
-  )
-}
+import LeagueName from './LeagueName.js'
+import LeagueDates from './LeagueDates.js'
 
 function PointsUpdate(winPoints, updateWin, gamePoints, updateGame) {
+  const incrementPoints = points => {
+    if (points < 10) {
+      points += 1
+    }
+    return points
+  }
+
+  const decrementPoints = points => {
+    if (points > 0) {
+      points -= 1
+    }
+    return points
+  }
+
   return (
-    <form>
-      <div className="l-row dates-select">
-        <div className="l-col-6 start-date">
-          <label>
-            Points Per Win
-            <input
-              type="number"
-              className="pointInput"
-              value={winPoints}
-              onChange={e => updateWin(e.target.value)}
-            />
-          </label>
-        </div>
-        <div className="l-col-6 end-date">
-          <label>
-            Points Per Game
-            <input
-              type="number"
-              className="pointInput"
-              value={gamePoints}
-              onChange={e => updateGame(e.target.value)}
-            />
-          </label>
-        </div>
+    <form className="row pointCounters">
+      <div className="l-col-6">
+        <label className=" pointsBox">
+          Points Per Win
+          <div className="points">
+            <button
+              className="pointDec"
+              onClick={e => e.preventDefault(updateWin(decrementPoints(winPoints)))}
+            >
+              -
+            </button>
+            <div className="pointDisplay">{winPoints}</div>
+            <button
+              className="pointInc"
+              onClick={e => e.preventDefault(updateWin(incrementPoints(winPoints)))}
+            >
+              +
+            </button>
+          </div>
+        </label>
+      </div>
+      <div className="l-col-6">
+        <label className=" pointsBox">
+          Points Per Game
+          <div className="points">
+            <button
+              className="pointDec"
+              onClick={e => e.preventDefault(updateGame(decrementPoints(gamePoints)))}
+            >
+              -
+            </button>
+            <div className="pointDisplay">{gamePoints}</div>
+            <button
+              className="pointInc"
+              onClick={e => e.preventDefault(updateGame(incrementPoints(gamePoints)))}
+            >
+              +
+            </button>
+          </div>
+        </label>
       </div>
     </form>
   )
@@ -102,7 +82,7 @@ const NewLeague = () => {
           <div className="l-col-12 form-container">
             <label>
               League Name
-              {LeagueName({ name, setName, nameSaved, saveName })}
+              <LeagueName name={name} setName={setName} nameSaved={nameSaved} saveName={saveName} />
             </label>
             {LeagueDates(startDate, setStart, endDate, setEnd)}
             {PointsUpdate(winPoints, updateWin, gamePoints, updateGame)}

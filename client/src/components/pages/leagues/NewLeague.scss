@@ -1,9 +1,5 @@
 .NewLeague {
 
-  div {
-    margin: 5px 0;
-  }
-
   .intro {
     width: 100%;
     text-align: center;
@@ -20,12 +16,65 @@
     text-align: center;
   }
 
-  .DayPickerInput, .pointInput {
-    display: flex;
-    margin-top: 0;
-    width: 180px;
-    margin: auto;
+  .react-datepicker-wrapper {
+    display: block;
+    margin: 0;
   }
+
+  .react-datepicker, .pointInput {
+    display: flex;
+    margin: auto;
+    
+    button {
+      font-size: 1px;
+      margin-top: 5px;
+      background: none;
+    }
+    
+
+    .react-datepicker__navigation--previous {
+      width: 0;
+      height: 0;
+      border-top: 5px solid transparent;
+      border-right: 10px solid rgb(160, 160, 160);
+      border-bottom: 5px solid transparent;
+    }
+
+    .react-datepicker__navigation--next {
+      width: 0;
+      height: 0;
+      border-top: 5px solid transparent;
+      border-left: 10px solid rgb(160, 160, 160);
+      border-bottom: 5px solid transparent;
+    }
+  }
+.pointCounters{
+  display: flex;
+  flex-direction: row;
+
+    .points {
+      display: flex;
+      flex-direction: row;
+      width: 130px;
+      margin: auto;
+      .pointDisplay {
+        width: 60px;
+        color: black;
+        font-size: 22px;
+        font-weight: 400;
+      }
+
+      .pointInc, .pointDec {
+        background-color: rgb(187, 187, 187);
+        border: 1px solid rgb(158, 158, 158);
+        width: 35px;
+        height: 35px;
+        padding: 0;
+        font-size: 20px;
+        font-weight: 600;
+      }
+  }
+}
 
   .savedName {
     color: black;
