@@ -12,13 +12,21 @@ const LeagueName = ({ name, setName, nameSaved, saveName }) => {
     saveName(false)
   }
 
+  const nameSaveBtn = ({ name }) => {
+    if (name) {
+      return (
+        <button className="nameSave" onClick={save}>
+          Save
+        </button>
+      )
+    }
+  }
+
   if (nameSaved !== true) {
     return (
       <form onSubmit={save}>
         <input type="text" className="name" value={name} onChange={e => setName(e.target.value)} />
-        <button className="nameSave" onClick={save}>
-          Save
-        </button>
+        {nameSaveBtn({ name })}
       </form>
     )
   } else {

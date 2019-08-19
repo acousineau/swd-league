@@ -12,6 +12,8 @@ const NewLeague = () => {
   const [endDate, setEnd] = useState()
   const [winPoints, updateWin] = useState(1)
   const [gamePoints, updateGame] = useState(1)
+  const [search, updateSearch] = useState()
+  const [searching, isSearching] = useState(false)
 
   const createLeague = () => {
     console.log(
@@ -26,6 +28,12 @@ const NewLeague = () => {
         '\nGame Points: ' +
         gamePoints
     )
+  }
+
+  const showSearch = search => {
+    if (!search) {
+      return <i class="fas fa-search" />
+    }
   }
 
   return (
@@ -55,7 +63,19 @@ const NewLeague = () => {
             <div className="l-row search-bar form-section">
               <label className="l-col-12">
                 Add Players
-                <input type="text" className="input" placeholder="Search..." />
+                <input
+                  type="text"
+                  className="input"
+                  value={search}
+                  onFocus={e => isSearching(true)}
+                  onBlur={e => {
+                    if (!search) {
+                      isSearching(false)
+                    }
+                  }}
+                  onChange={e => updateSearch(e.target.value)}
+                />
+                {showSearch(searching)}
               </label>
             </div>
             <div className="l-col-12 submit">

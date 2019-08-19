@@ -5,23 +5,44 @@ import UserContext from '../user/context'
 
 import './Header.scss'
 
-const renderControls = user => {
+const renderControls = (user, open, toggleOpen) => {
   if (user === null) {
     return
   } else if (user === false) {
     return (
       <li>
-        <Link to="/signin">Sign In</Link>
+        <Link
+          to="/signin"
+          onClick={() => {
+            toggleOpen(false)
+          }}
+        >
+          Sign In
+        </Link>
       </li>
     )
   } else {
     return (
       <Fragment>
         <li>
-          <Link to="/dashboard">Dashboard</Link>
+          <Link
+            to="/dashboard"
+            onClick={() => {
+              toggleOpen(false)
+            }}
+          >
+            Dashboard
+          </Link>
         </li>
         <li>
-          <a href="/api/users/signout">Sign Out</a>
+          <a
+            href="/api/users/signout"
+            onClick={() => {
+              toggleOpen(false)
+            }}
+          >
+            Sign Out
+          </a>
         </li>
       </Fragment>
     )
@@ -72,11 +93,17 @@ const Header = () => {
           <div className="mobile-menu">
             <ul className="nav-items">
               <li>
-                <Link to="/leagues" className="Leagues-link">
+                <Link
+                  to="/leagues"
+                  className="Leagues-link"
+                  onClick={() => {
+                    toggleOpen(false)
+                  }}
+                >
                   Leagues
                 </Link>
               </li>
-              {renderControls(userState.user)}
+              {renderControls(userState.user, open, toggleOpen)}
             </ul>
           </div>
         </div>
