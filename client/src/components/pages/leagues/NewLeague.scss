@@ -5,31 +5,41 @@
   .form-container {
     max-width: 700px;
     margin: auto;
-    border-radius: 10px;
-    padding: 20px;
+    background-color: lighten($sw-or-black, 75%);
+    border: solid $sw-or-black 1px;
     box-shadow: $box-shadow;
 
     .form-section {
       margin: 40px 0;
-        display: flex;
-        width: 100%;
+      display: flex;
+      width: 100%;
     }
 
     .intro {
       display: flex;
       justify-content: center;
       margin-bottom: 20px;
+      padding: 20px;
+      background-color: $sw-or-brown;
+      color: white;
     }
 
     label {
-      color: rgb(133, 149, 180);
+      color: lighten($sw-or-blue, 20%);
       font-size: 14px;
       text-align: center;
 
       input {
         text-align: center;
-        background-color: rgb(247, 247, 247);
-        border-radius: 20px;
+        background-color: white;
+        border: solid lighten($sw-or-gray, 20%) 2px;
+      }
+
+      .has-start, .has-end {
+        background: none;
+        border: none;
+        box-shadow: none;
+        font-weight: 600;
       }
     }
     
@@ -45,7 +55,7 @@
     .nameSave {
       float: right;
       position: relative;
-      color: rgba(75, 27, 27, 0.425);
+      color: $sw-or-maroon;
       background: none;
       font-size: 12px;
       top: -45px;
@@ -70,7 +80,7 @@
         width: 0;
         height: 0;
         border-top: 5px solid transparent;
-        border-right: 10px solid rgb(160, 160, 160);
+        border-right: 10px solid $sw-or-gray;
         border-bottom: 5px solid transparent;
       }
   
@@ -78,7 +88,7 @@
         width: 0;
         height: 0;
         border-top: 5px solid transparent;
-        border-left: 10px solid rgb(160, 160, 160);
+        border-left: 10px solid $sw-or-gray;
         border-bottom: 5px solid transparent;
       }
     }
@@ -99,20 +109,28 @@
         
           .pointDisplay {
             width: 60px;
-            color: black;
+            color: $sw-or-black;
             font-size: 22px;
             font-weight: 400;
           }
           
           .pointInc, .pointDec {
-            background-color: rgb(187, 187, 187);
-            border: 1px solid rgb(158, 158, 158);
             width: 35px;
             height: 35px;
             padding: 0;
             font-size: 20px;
             font-weight: 600;
             box-shadow: $box-shadow
+          }
+          
+          .pointInc {
+            background-color: lighten($sw-or-green, 20%);
+            border: 1px solid $sw-or-green;
+          }
+
+          .pointDec {
+            background-color: lighten($sw-or-maroon, 20%);
+            border: 1px solid $sw-or-maroon;
           }
         }
       }  
@@ -124,8 +142,11 @@
       
       .submitForm {
         margin: auto;
-        background-color: rgb(153, 153, 153);
+        background-color: $sw-or-tan;
         box-shadow: $box-shadow;
+        &:hover {
+          background-color: lighten($sw-or-tan, 20%);
+        }
         &:disabled {
           display: none;
         }

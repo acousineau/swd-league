@@ -43,7 +43,6 @@ const NewLeague = () => {
           <h4 className="l-col-12 page-header">Leagues</h4>
           <div className="l-col-12 form-container">
             <div className="l-row intro">BUILD YOUR LEAGUE...</div>
-
             <label>
               League Name
               <LeagueName name={name} setName={setName} nameSaved={nameSaved} saveName={saveName} />

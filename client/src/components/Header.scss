@@ -26,7 +26,7 @@
   .nav-wrapper {
     position: fixed;
     width: 100%;
-    background-image: linear-gradient(rgb(120, 120, 120), rgb(40, 40, 40));
+    background-image: linear-gradient($sw-or-gray, $sw-or-black);
     padding: ($nav-height * .2) 0 0 ($nav-height * .35);
     color: white;
     height: $nav-height;
@@ -47,12 +47,12 @@
 
   a {
     display: inline-block;
-    color: rgb(255, 255, 255);
+    color: white;
     font-size: 20px;
     font-weight: 600;
     
     &:hover {
-        color: #b8b8b8;
+        color: lighten($sw-or-gray, 20%);
       }
   }
 
@@ -108,7 +108,7 @@
       right: 0;
       height: 100%;
       width: 0;
-      background-color: darkgrey;
+      background-color: lighten($sw-or-gray, 10%);
       transition: all .6s ease;
     }
 
@@ -172,10 +172,10 @@
 
         .saber-a:after {
           background-image: repeating-linear-gradient(to right,rgb(255, 230, 5) 10%, rgb(92, 92, 92) 20%);
-          top: 17px;
+          top: 16px;
           left: 8px;
           width: 7px;
-          height: 5px;
+          height: 6px;
         }
 
         .saber-b:after {
@@ -198,17 +198,17 @@
         }
 
         .saber-a {
-          background-image: linear-gradient(rgb(104, 228, 104), rgb(255, 255, 255), rgb(104, 228, 104));
+          background-image: linear-gradient($sw-saber-green, white, $sw-saber-green);
           animation: saber-right 1s .5s backwards;
         }
 
         .saber-b {
-          background-image: linear-gradient(red, rgb(255, 221, 221), red);
+          background-image: linear-gradient($sw-saber-red, $sw-saber-red-center, $sw-saber-red);
           animation: saber-left 1s .5s backwards; 
         }
 
         .saber-c {
-          background-image: linear-gradient(rgb(119, 26, 240), white, rgb(119, 26, 240));
+          background-image: linear-gradient($sw-saber-purple, white, $sw-saber-purple);
           animation: saber-right 1s .5s backwards;      
         }
 
@@ -219,7 +219,7 @@
         }
 
         .kylo {
-          background-image: linear-gradient(red, rgb(255, 221, 221), red);
+          background-image: linear-gradient($sw-saber-red, $sw-saber-red-center, $sw-saber-red);
           top: -6px;
           right: 6px;
           transform:  rotate(-50deg);
@@ -243,10 +243,10 @@
         }
 
         .cross-guard {
-          background: darkgrey;
+          background: lighten($sw-or-gray, 10%);
 
           &::before {
-            background-image: linear-gradient(red, rgb(255, 221, 221), red);
+            background-image: linear-gradient($sw-saber-red, $sw-saber-red-center, $sw-saber-red);
             top: 27px;
             left: 0;
             width: 26px;
@@ -263,7 +263,7 @@
         }
 
         .rey {
-          background-image: linear-gradient(rgb(26, 190, 240), white, rgb(26, 190, 240));
+          background-image: linear-gradient($sw-saber-blue, white, $sw-saber-blue);
           top: 6px;
           right: -5px;
           transform: rotate(50deg);
