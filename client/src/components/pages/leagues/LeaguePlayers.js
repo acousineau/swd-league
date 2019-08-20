@@ -3,7 +3,7 @@ import React from 'react'
 const SearchPlayers = ({ search, updateSearch, searching, isSearching }) => {
   const showSearch = search => {
     if (!search) {
-      return <i class="fas fa-search" />
+      return <i className="fas fa-search" />
     }
   }
 
