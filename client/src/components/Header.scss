@@ -148,12 +148,12 @@
           position: absolute;
           width: 15px;
           height: 5px;
-          border: solid rgb(85, 85, 85) 1px;
+          border: solid darken($sw-saber-hilt-a, 20%) 1px;
         }
 
         .saber-a:before, 
         .saber-c:before {
-          background-image: linear-gradient( rgb(117, 117, 117), rgb(167, 167, 167), rgb(116, 116, 116));
+          background-image: linear-gradient( $sw-saber-hilt-a, lighten($sw-saber-hilt-a, 20%), $sw-saber-hilt-a);
           left: -2px;
           border-radius: 2px;
           box-shadow: $box-shadow;
@@ -164,18 +164,18 @@
         }
 
         .saber-b:before {
-          background-image: linear-gradient( rgb(44, 44, 44), rgb(95, 95, 95), rgb(44, 44, 44));
+          background-image: linear-gradient( $sw-saber-hilt-b, lighten($sw-saber-hilt-b, 20%), $sw-saber-hilt-b);
           right: 3px;
           width: 17px;
           box-shadow: $box-shadow;
         }
 
         .saber-a:after {
-          background-image: repeating-linear-gradient(to right,rgb(255, 230, 5) 10%, rgb(92, 92, 92) 20%);
-          top: 16px;
+          background-image: repeating-linear-gradient(to right,rgb(255, 230, 5) 10%, darken($sw-saber-hilt-a, 20%) 20%);
+          top: 17px;
           left: 8px;
-          width: 7px;
-          height: 6px;
+          width: 6px;
+          height: 5px;
         }
 
         .saber-b:after {
@@ -188,7 +188,7 @@
         }
 
         .saber-c:after {
-          background-image: linear-gradient(to right, rgb(37, 37, 37) 60%, rgb(255, 153, 0) 85%, rgb(185, 185, 185) 10%);
+          background-image: linear-gradient(to right, $sw-or-black 60%, rgb(255, 153, 0) 85%, rgb(185, 185, 185) 10%);
           top: 43px;
           left: 2px;
           width: 10px;
@@ -225,7 +225,7 @@
           transform:  rotate(-50deg);
           
           &::before {
-            background-image: linear-gradient( rgb(44, 44, 44), rgb(95, 95, 95), rgb(44, 44, 44));
+            background-image: linear-gradient( $sw-saber-hilt-b, lighten($sw-saber-hilt-b, 20%), $sw-saber-hilt-b);
             left: 0px;
             width: 22px;
             border-radius: 0 3px 3px 0;
@@ -233,7 +233,7 @@
           }
 
           &::after {
-            background-image: linear-gradient( rgb(44, 44, 44), rgb(95, 95, 95), rgb(44, 44, 44));
+            background-image: linear-gradient( $sw-saber-hilt-b, lighten($sw-saber-hilt-b, 20%), $sw-saber-hilt-b);
             top: 0;
             left: 10px;
             width: 12px;
