@@ -5,6 +5,7 @@ import 'react-datepicker/dist/react-datepicker.css'
 const LeagueDates = ({ startDate, setStart, endDate, setEnd }) => {
   const [hasStart, selectStart] = useState(false)
   const [hasEnd, selectEnd] = useState(false)
+
   return (
     <form className="l-row dates-select form-section">
       <div className="l-col-6 start-date">

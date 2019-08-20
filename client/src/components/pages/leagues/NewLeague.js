@@ -4,6 +4,7 @@ import './NewLeague.scss'
 import LeagueName from './LeagueName.js'
 import LeagueDates from './LeagueDates.js'
 import PointsUpdate from './LeaguePoints.js'
+import SearchPlayers from './LeaguePlayers.js'
 
 const NewLeague = () => {
   const [name, setName] = useState('')
@@ -30,12 +31,6 @@ const NewLeague = () => {
     )
   }
 
-  const showSearch = search => {
-    if (!search) {
-      return <i class="fas fa-search" />
-    }
-  }
-
   return (
     <div className="NewLeague">
       <div className="l-grid">
@@ -59,24 +54,12 @@ const NewLeague = () => {
               gamePoints={gamePoints}
               updateGame={updateGame}
             />
-            <div className="l-row search-bar form-section">
-              <label className="l-col-12">
-                Add Players
-                <input
-                  type="text"
-                  className="input"
-                  value={search}
-                  onFocus={e => isSearching(true)}
-                  onBlur={e => {
-                    if (!search) {
-                      isSearching(false)
-                    }
-                  }}
-                  onChange={e => updateSearch(e.target.value)}
-                />
-                {showSearch(searching)}
-              </label>
-            </div>
+            <SearchPlayers
+              search={search}
+              updateSearch={updateSearch}
+              searching={searching}
+              isSearching={isSearching}
+            />
             <div className="l-col-12 submit">
               <button
                 className="submitForm"
