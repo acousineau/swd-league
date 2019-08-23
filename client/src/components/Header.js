@@ -14,7 +14,9 @@ const renderControls = (user, open, toggleOpen) => {
         <Link
           to="/signin"
           onClick={() => {
-            toggleOpen(false)
+            if (open) {
+              toggleOpen(false)
+            }
           }}
         >
           Sign In
@@ -28,7 +30,9 @@ const renderControls = (user, open, toggleOpen) => {
           <Link
             to="/dashboard"
             onClick={() => {
-              toggleOpen(false)
+              if (open) {
+                toggleOpen(false)
+              }
             }}
           >
             Dashboard
@@ -38,7 +42,9 @@ const renderControls = (user, open, toggleOpen) => {
           <a
             href="/api/users/signout"
             onClick={() => {
-              toggleOpen(false)
+              if (open) {
+                toggleOpen(false)
+              }
             }}
           >
             Sign Out

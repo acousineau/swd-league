@@ -4,73 +4,55 @@ import './NewLeague.scss'
 import LeagueName from './LeagueName.js'
 import LeagueDates from './LeagueDates.js'
 import PointsUpdate from './LeaguePoints.js'
-import SearchPlayers from './LeaguePlayers.js'
+import LeaguePlayers from './LeaguePlayers.js'
 
 const NewLeague = () => {
   const [name, setName] = useState('')
-  const [nameSaved, saveName] = useState(false)
   const [startDate, setStart] = useState()
   const [endDate, setEnd] = useState()
   const [winPoints, updateWin] = useState(1)
   const [gamePoints, updateGame] = useState(1)
-  const [search, updateSearch] = useState()
-  const [searching, isSearching] = useState(false)
+  const [playerSearch, updateSearch] = useState([])
 
   const createLeague = () => {
-    console.log(
-      'League Name: ' +
-        name +
-        '\nStart Date: ' +
-        startDate +
-        '\nEnd Date: ' +
-        endDate +
-        '\nWin Points: ' +
-        winPoints +
-        '\nGame Points: ' +
-        gamePoints
-    )
+    console.log(name)
   }
 
   return (
     <div className="NewLeague">
       <div className="l-grid">
-        <div className="l-row">
-          <h4 className="l-col-12 page-header">Leagues</h4>
+        <form className="l-row">
+          <h2 className="l-col-12 page-header">BUILD YOUR LEAGUE...</h2>
           <div className="l-col-12 form-container">
-            <div className="l-row intro">BUILD YOUR LEAGUE...</div>
-            <label>
-              League Name
-              <LeagueName name={name} setName={setName} nameSaved={nameSaved} saveName={saveName} />
-            </label>
+            <LeagueName name={name} setName={setName} />
             <LeagueDates
-              startDate={startDate}
-              setStart={setStart}
-              endDate={endDate}
-              setEnd={setEnd}
+              set={setStart}
+              type="Start"
+              min={undefined}
+              max={endDate}
+              selected={startDate}
             />
-            <PointsUpdate
-              winPoints={winPoints}
-              updateWin={updateWin}
-              gamePoints={gamePoints}
-              updateGame={updateGame}
+            <LeagueDates
+              set={setEnd}
+              type="End"
+              min={startDate}
+              max={undefined}
+              selected={endDate}
             />
-            <SearchPlayers
-              search={search}
-              updateSearch={updateSearch}
-              searching={searching}
-              isSearching={isSearching}
-            />
+            <PointsUpdate points={winPoints} update={updateWin} type="Win" />
+            <PointsUpdate points={gamePoints} update={updateGame} type="Game" />
+            <LeaguePlayers />
             <div className="l-col-12 submit">
               <button
                 className="submitForm"
-                disabled={!nameSaved || !startDate || !endDate}
+                disabled={!name || !startDate || !endDate}
                 onClick={createLeague}
               >
                 Create League
               </button>
             </div>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   )

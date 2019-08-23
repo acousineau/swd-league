@@ -2,158 +2,33 @@
 
 .NewLeague {
    
-  .form-container {
-    max-width: 700px;
-    margin: auto;
-    background-color: lighten($sw-or-black, 75%);
-    border: solid $sw-or-black 1px;
-    box-shadow: $box-shadow;
-
-    .form-section {
-      margin: 40px 0;
-      display: flex;
-      width: 100%;
-    }
-
-    .intro {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 20px;
-      padding: 20px;
-      background-color: $sw-or-brown;
-      color: white;
-    }
-
-    label {
-      color: lighten($sw-or-blue, 20%);
-      font-size: 14px;
-      text-align: center;
-
-      input {
-        text-align: center;
-        background-color: white;
-        border: solid lighten($sw-or-gray, 20%) 2px;
-      }
-
-      .has-start, .has-end {
-        background: none;
-        border: none;
-        box-shadow: none;
-        font-weight: 600;
-      }
-    }
-    
-    .savedName {
-      color: black;
-      font-size: 18px;
-      
-      .editName {
-        display: none;
-      } 
-    }
-
-    .nameSave {
-      float: right;
-      position: relative;
-      color: $sw-or-maroon;
-      background: none;
-      font-size: 12px;
-      top: -45px;
-    }
-
-    .fa-search {
-      position: relative;
-      bottom: 40px;
-    }
 
     .react-datepicker-wrapper {
-      display: block;
-      width: 180px;
-      margin: auto;
 
       button {
         font-size: 1px;
         background: none;
       }
       
-      .react-datepicker__navigation--previous {
+      .react-datepicker__navigation--previous, .react-datepicker__navigation--next {
         width: 0;
         height: 0;
         border-top: 5px solid transparent;
-        border-right: 10px solid $sw-or-gray;
         border-bottom: 5px solid transparent;
+      }
+
+      .react-datepicker__navigation--previous {
+        border-right: 10px solid $sw-or-gray;
       }
   
-      .react-datepicker__navigation--next {
-        width: 0;
-        height: 0;
-        border-top: 5px solid transparent;
+      .react-datepicker__navigation--next
+       {
         border-left: 10px solid $sw-or-gray;
-        border-bottom: 5px solid transparent;
+
       }
     }
 
-    .pointCounters{
-      display: flex;
-      flex-direction: row;
-    
-      .pointsBox {
-        display: flex;
-        flex-direction: column;
-        width: 130px;
-        margin: 10px auto;
-
-        .points {
-          display: flex;
-          flex-direction: row-reverse;
-        
-          .pointDisplay {
-            width: 60px;
-            color: $sw-or-black;
-            font-size: 22px;
-            font-weight: 400;
-          }
-          
-          .pointInc, .pointDec {
-            width: 35px;
-            height: 35px;
-            padding: 0;
-            font-size: 20px;
-            font-weight: 600;
-            background: none;
-          }
-          
-          .pointInc {
-            background-color: lighten($sw-or-green, 20%);
-            border: 1px solid $sw-or-green;
-          }
-
-          .pointDec {
-            background-color: lighten($sw-or-maroon, 20%);
-            border: 1px solid $sw-or-maroon;
-          }
-        }
-      }  
-    }
-
-    .submit {
-      display: flex;
-      align-content: center;
-      
-      .submitForm {
-        margin: 0 auto 40px auto;
-        background-color: $sw-or-tan;
-        box-shadow: $box-shadow;
-        &:hover {
-          background-color: lighten($sw-or-tan, 20%);
-        }
-        &:disabled {
-          display: none;
-        }
-      }
-    }
-  }    
-}
+   }
   
 
   
