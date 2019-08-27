@@ -8,6 +8,7 @@
     @include breakpoint-max(bp(large))
     margin: 64px auto;
     text-align: center;
+    background-color: white;
     box-shadow: $box-shadow;
   }
 
@@ -17,7 +18,7 @@
   
   .sign-in-card-title {
     padding: 15px;
-    background-color: $sw-or-black;
+    background-color: $sw-or-green;
     color: white;
     font-size: 24px;
     font-weight: 600;

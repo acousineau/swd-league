@@ -16,23 +16,21 @@ const PointsUpdate = ({ points, update, type }) => {
   }
 
   return (
-    <div className="l-col-6">
-      <label className=" pointsBox">
+    <div className="l-col-6 set-points">
+      <label className=" points-wrapper">
         Points Per {type}
-        <div className="points-container">
-          <button
-            className="pointInc"
-            onClick={e => e.preventDefault(update(incrementPoints(points)))}
-          >
-            <i class="fas fa-chevron-up" />
-          </button>
-          <div className="pointDisplay">{points}</div>
-          <button
-            className="pointDec"
-            onClick={e => e.preventDefault(update(decrementPoints(points)))}
-          >
-            <i class="fas fa-chevron-down" />
-          </button>
+        <div className="points-box">
+          <div className="point-inc">
+            <button onClick={e => e.preventDefault(update(incrementPoints(points)))}>
+              <i className="fas fa-chevron-up" />
+            </button>
+          </div>
+          <div className="point-display">{points}</div>
+          <div className="point-dec">
+            <button onClick={e => e.preventDefault(update(decrementPoints(points)))}>
+              <i className="fas fa-chevron-down" />
+            </button>
+          </div>
         </div>
       </label>
     </div>

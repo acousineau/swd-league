@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Select from 'react-select'
 
-const players = [
+const users = [
   {
     name: 'Andy',
     email: 'andy@swleague.com',
@@ -40,7 +40,33 @@ const players = [
   }
 ]
 
-const LeaguePlayers = () => {
-  return <Select options={players} />
+const buildPlayerList = users => {
+  const playerSearch = []
+
+  for (const [key, value] of Object.entries(users)) {
+    playerSearch.push({
+      key: key,
+      value: [value.name, value.email, value.discord.username],
+      label: value.discord.username
+    })
+  }
+  return playerSearch
+}
+
+const LeaguePlayers = (playersSelected, updatePlayers) => {
+  const players = buildPlayerList(users)
+
+  return (
+    <label>
+      League Players
+      <Select
+        isMulti
+        name="players"
+        options={players}
+        classNamePrefix="select"
+        onChange={updatePlayers}
+      />
+    </label>
+  )
 }
 export default LeaguePlayers

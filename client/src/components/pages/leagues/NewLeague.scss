@@ -1,32 +1,65 @@
 @import "core";
 
 .NewLeague {
-   
-
-    .react-datepicker-wrapper {
-
-      button {
-        font-size: 1px;
-        background: none;
-      }
-      
-      .react-datepicker__navigation--previous, .react-datepicker__navigation--next {
-        width: 0;
-        height: 0;
-        border-top: 5px solid transparent;
-        border-bottom: 5px solid transparent;
-      }
-
-      .react-datepicker__navigation--previous {
-        border-right: 10px solid $sw-or-gray;
-      }
   
-      .react-datepicker__navigation--next
-       {
-        border-left: 10px solid $sw-or-gray;
 
+  .form-container {
+    background-color: $sw-or-tan;
+
+    .form {
+      background-color: lighten($sw-or-tan, 20%);
+
+      .form-section {
+        margin: 10px 0;
+      }
+
+      .dates, .set-date, .points, .points-box, .set-points {
+        display: flex;
+      }
+
+      .points-box {
+        border: solid lighten($sw-or-gray, 10%) 3px;
+        border-radius: 5px;
+        flex-direction: row-reverse;
+
+        button, .point-display {
+          background-color: lighten($sw-or-gray, 20%);
+          border-radius: 0;
+          text-align: center;
+          font-size: 20px;
+          color: white;
+          width: 50px;
+          height: 50px;
+          padding: 10px 0;
+        }
+      }
+
+      .react-datepicker-wrapper {
+        display: block;
+        button {
+          font-size: 1px;
+          background: none;
+        }
+        
+        .react-datepicker__navigation--previous, .react-datepicker__navigation--next {
+          width: 0;
+          height: 0;
+          border-top: 5px solid transparent;
+          border-bottom: 5px solid transparent;
+        }
+
+        .react-datepicker__navigation--previous {
+          border-right: 10px solid $sw-or-gray;
+        }
+    
+        .react-datepicker__navigation--next
+        {
+          border-left: 10px solid $sw-or-gray;
+
+        }
       }
     }
+  }
 
    }
   
