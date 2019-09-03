@@ -12,7 +12,7 @@ const NewLeague = () => {
   const [endDate, setEnd] = useState()
   const [winPoints, updateWin] = useState(1)
   const [gamePoints, updateGame] = useState(1)
-  const [playerSelected, updatePlayers] = useState([])
+  const [playerSelected, updatePlayers] = useState()
 
   const createLeague = () => {}
 

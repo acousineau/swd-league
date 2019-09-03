@@ -1,7 +1,3 @@
-import React from 'react'
-import Select from 'react-select'
-import { SSL_OP_EPHEMERAL_RSA } from 'constants'
-
 const users = [
   {
     name: 'Andy',
@@ -41,39 +37,9 @@ const users = [
   },
   {
     name: 'Heather',
-    email: 'heater@swleague.com'
+    email: 'heather@swleague.com',
+    discord: {}
   }
 ]
 
-const buildPlayerList = users => {
-  const playerSearch = []
-
-  for (const [key, value] of Object.entries(users)) {
-    if (value.discord) {
-      playerSearch.push({
-        key: key,
-        value: [value.name, value.email, value.discord.username],
-        label: value.discord.username
-      })
-    } else {
-      playerSearch.push({
-        key: key,
-        value: [value.name, value.email],
-        label: value.name
-      })
-    }
-  }
-  return playerSearch
-}
-
-const LeaguePlayers = (playersSelected, updatePlayers) => {
-  const players = buildPlayerList(users)
-
-  return (
-    <label>
-      League Players
-      <Select isMulti options={players} onInputChange={updatePlayers} />
-    </label>
-  )
-}
-export default LeaguePlayers
+export default users
