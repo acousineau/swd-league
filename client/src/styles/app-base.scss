@@ -16,7 +16,8 @@
 }
 
 body {
-  background-color: $sw-or-black;
+  background-color: lighten($sw-or-gray, 30%);
+  
 }
 
 .page-header {

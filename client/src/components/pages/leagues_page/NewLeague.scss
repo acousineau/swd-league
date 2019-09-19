@@ -4,10 +4,19 @@
   
 
   .form-container {
-    background-color: $sw-or-tan;
+    background-color: $sw-or-black;
+    color: $sw-or-tan;
+    border: solid lighten($sw-or-brown, 20%) 1px;
+    border-radius: 10px;
+    box-shadow: $box-shadow;
 
     .form {
-      background-color: lighten($sw-or-tan, 20%);
+      background-color: lighten($sw-or-black, 10%);
+      border-radius: 0 0 10px 10px;
+
+      .css-26l3qy-menu {
+        color: black;
+      }
 
       .form-section {
         margin: 10px 0;
@@ -18,24 +27,26 @@
       }
 
       .points-box {
-        border: solid lighten($sw-or-gray, 10%) 3px;
+        border: solid lighten($sw-or-gray, 10%) 2px;
         border-radius: 5px;
         flex-direction: row-reverse;
 
         button, .point-display {
-          background-color: lighten($sw-or-gray, 20%);
+          background-color: lighten($sw-or-black, 10%);
           border-radius: 0;
           text-align: center;
-          font-size: 20px;
+          font-size: 17px;
           color: white;
           width: 50px;
-          height: 50px;
+          height: 40px;
           padding: 10px 0;
         }
       }
 
       .react-datepicker-wrapper {
         display: block;
+        height: 54px;
+        width: 154px;
         button {
           font-size: 1px;
           background: none;

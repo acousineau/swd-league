@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 import './NewLeague.scss'
 import LeagueName from './LeagueName.js'
@@ -6,15 +7,13 @@ import LeagueDates from './LeagueDates.js'
 import PointsUpdate from './LeaguePoints.js'
 import LeaguePlayers from './LeaguePlayers.js'
 
-const NewLeague = () => {
+const NewLeague = ({ updateLeagues }) => {
   const [name, setName] = useState('')
   const [startDate, setStart] = useState()
   const [endDate, setEnd] = useState()
   const [winPoints, updateWin] = useState(1)
   const [gamePoints, updateGame] = useState(1)
-  const [playerSelected, updatePlayers] = useState()
-
-  const createLeague = () => {}
+  const [playersSelected, updatePlayers] = useState(null)
 
   return (
     <div className="NewLeague">
@@ -46,31 +45,18 @@ const NewLeague = () => {
               <PointsUpdate points={gamePoints} update={updateGame} type="Game" />
             </div>
             <div className="l-col-12 players form-section">
-              <LeaguePlayers playerSelected={playerSelected} updatePlayers={updatePlayers} />
+              <LeaguePlayers updatePlayers={updatePlayers} />
             </div>
             <div className="l-col-12 submit form-section">
-              <button
-                className="submitForm"
-                disabled={!name || !startDate || !endDate}
-                onClick={e => {
-                  e.preventDefault()
-                  console.log(
-                    name +
-                      ' : ' +
-                      startDate +
-                      ' : ' +
-                      endDate +
-                      ' : ' +
-                      winPoints +
-                      ' : ' +
-                      gamePoints +
-                      ' : ' +
-                      playerSelected
-                  )
-                }}
-              >
-                Create League
-              </button>
+              <Link to="./leagues">
+                <button
+                  className="submitForm"
+                  disabled={!name || !startDate || !endDate || !playersSelected}
+                  onClick={console.log(startDate, endDate)}
+                >
+                  Create League
+                </button>
+              </Link>
             </div>
           </div>
         </form>

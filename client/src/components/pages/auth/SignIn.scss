@@ -18,7 +18,7 @@
   
   .sign-in-card-title {
     padding: 15px;
-    background-color: $sw-or-green;
+    background-color: lighten($sw-or-black, 10%);
     color: white;
     font-size: 24px;
     font-weight: 600;
@@ -29,12 +29,12 @@
     font-weight: 400;
     border-radius: 3px;
     padding: 5px 10px;
-    background-color: lighten($sw-or-green, 20%);
+    background-color: $sw-or-brown;
     color: white;
     box-shadow: $box-shadow;
 
     &:hover {
-      background: $sw-or-green;
+      background: lighten($sw-or-brown, 10%);
     }
   }
 }

@@ -1,0 +1,61 @@
+@import 'core';
+
+.LeagueDetails {
+  position: fixed;
+  top: 0px;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+
+  .portal-background {
+    background-color: $sw-or-gray;
+    opacity: 0.7;
+    width: 100%;
+    height: 100%;
+  }
+
+  .details-container {
+    position: fixed;
+    padding: 0;
+    top: 0px;
+    margin: 10%;
+    width: 80%;
+    background-color: $sw-or-black;
+    border-radius: 6px;
+    opacity: solid;
+
+    .close-details {
+      float: right;
+      padding: 10px 15px;
+      font-size: 20px;
+      background-color: darken($sw-or-gray, 20%);
+    }
+
+    .info-container {
+      color: $sw-or-tan;
+      font-size: 24px;
+      font-weight: 600;
+      margin: 15px;
+
+      label {
+        margin: 20px 0 0 0;
+        font-size: 16px;
+        color: lighten($sw-or-gray, 30%);
+      }
+
+      .ranked-points {
+        padding: 6px 0;
+        font-size: 18px;
+      }
+
+      .league-dates {
+        margin: 40px 0 0 0;
+        color: lighten($sw-or-gray, 30%);
+
+        .end-date {
+          text-align: right;
+        }
+      }
+    }
+  }
+}

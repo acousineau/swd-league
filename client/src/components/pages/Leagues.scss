@@ -2,17 +2,29 @@
 
 .Leagues {
 
-  .new-button-container {
+  .button {
+    float: right;
+    box-shadow: $box-shadow;
+    width: 150px;
+  }
 
-    padding: 20px 0;
+  .button-container {
 
+    
     .new-league-button {
-      width: 150px;
+      padding: 20px 0;
       background-color: lighten($sw-or-maroon, 20%);
-      box-shadow: $box-shadow;
 
       &:hover {
         background-color: lighten($sw-or-maroon, 30%);
+      }
+    }
+
+    .view-button {
+      background-color: lighten($sw-or-blue, 20%);
+
+      &:hover {
+        background-color: lighten($sw-or-blue, 30%);
       }
     }
   }

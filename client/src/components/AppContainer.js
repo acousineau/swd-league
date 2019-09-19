@@ -5,7 +5,7 @@ import Welcome from './pages/Welcome'
 import Dashboard from './pages/Dashboard'
 import SignIn from './pages/auth/SignIn'
 import Leagues from './pages/Leagues'
-import NewLeague from './pages/leagues/NewLeague'
+import NewLeague from './pages/leagues_page/NewLeague'
 
 import UserContext from '../user/context'
 import { fetchUser } from '../user/actions'
