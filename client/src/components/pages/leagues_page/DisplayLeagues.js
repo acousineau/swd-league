@@ -2,7 +2,7 @@ import React from 'react'
 
 import './DisplayLeagues.scss'
 
-const DisplayLeagues = ({ activeLeague, toggle, setKey }) => {
+const DisplayLeagues = ({ activeLeagues, toggle, setKey }) => {
   return (
     <div className="l-col-12 LeaguesContainer">
       <div className="l-row">
@@ -10,18 +10,18 @@ const DisplayLeagues = ({ activeLeague, toggle, setKey }) => {
           <div
             className="avatar"
             style={{
-              backgroundImage: `url(${activeLeague.host.discord.avatar})`
+              backgroundImage: `url(${activeLeagues.league.host.discord.avatar})`
             }}
           />
-          {activeLeague.name}
+          {activeLeagues.league.name}
         </div>
         <div className="l-col-3 button-container">
           <button
-            key={activeLeague.key}
+            key={activeLeagues.key}
             className="button view-button"
             onClick={e => {
               toggle(true)
-              setKey(activeLeague.key)
+              setKey(activeLeagues.key)
             }}
           >
             Details
@@ -30,7 +30,7 @@ const DisplayLeagues = ({ activeLeague, toggle, setKey }) => {
       </div>
       <div className="l-row">
         <div className="l-col-12 end-date">
-          League Ends: {String(activeLeague.end).substr(0, 10)}
+          League Ends: {String(activeLeagues.end).substr(0, 10)}
         </div>
       </div>
     </div>

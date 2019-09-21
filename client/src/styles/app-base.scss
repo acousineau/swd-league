@@ -13,11 +13,13 @@
         Cantarell,
         "Helvetica Neue",
         sans-serif;
+        * > input {
+          background-color: lighten($sw-or-gray, 40%);
+        }
 }
 
 body {
-  background-color: lighten($sw-or-gray, 30%);
-  
+  background-color: lighten($sw-or-gray, 35%);
 }
 
 .page-header {

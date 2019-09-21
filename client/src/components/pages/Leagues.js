@@ -8,12 +8,12 @@ import DisplayLeagues from './leagues_page/DisplayLeagues'
 import LeagueDetails from './leagues_page/LeagueDetails'
 import ActiveLeaguesContext from '../../leagues/active_leagues'
 
-const activeLeagues = (activeLeague, toggleDetails, setKey) => {
+const activeLeagues = (activeLeagues, toggleDetails, setKey) => {
   const leagueList = []
-  for (let i = 0; i < activeLeague.length; i++) {
+  for (let i = 0; i < activeLeagues.length; i++) {
     leagueList.push(
       <DisplayLeagues
-        activeLeague={activeLeague[i]}
+        activeLeagues={activeLeagues[i]}
         toggle={toggleDetails}
         key={i}
         setKey={setKey}
