@@ -1,6 +1,6 @@
 import React from 'react'
 
-const PointsUpdate = ({ points, update, type }) => {
+const LeaguePoints = ({ points, update, type }) => {
   const incrementPoints = points => {
     if (points < 10) {
       points += 1
@@ -21,13 +21,25 @@ const PointsUpdate = ({ points, update, type }) => {
         Points Per {type}
         <div className="points-box">
           <div className="point-inc">
-            <button onClick={e => e.preventDefault(update(incrementPoints(points)))}>
+            <button
+              onClick={e => {
+                console.log('Target:', e.target)
+                console.log('Current Target:', e.currentTarget)
+                e.preventDefault()
+                update(incrementPoints(points))
+              }}
+            >
               <i className="fas fa-chevron-up" />
             </button>
           </div>
           <div className="point-display">{points}</div>
           <div className="point-dec">
-            <button onClick={e => e.preventDefault(update(decrementPoints(points)))}>
+            <button
+              onClick={e => {
+                e.preventDefault()
+                update(decrementPoints(points))
+              }}
+            >
               <i className="fas fa-chevron-down" />
             </button>
           </div>
@@ -37,4 +49,4 @@ const PointsUpdate = ({ points, update, type }) => {
   )
 }
 
-export default PointsUpdate
+export default LeaguePoints

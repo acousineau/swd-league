@@ -6,8 +6,8 @@ const UserInfo = props => {
   const { displayName } = props
   return (
     <form className="UserInfo">
-      <div className="row">
-        <div className="input-field col s12">
+      <div className="l-row">
+        <div className="input-field l-col-12">
           <label htmlFor="name" className="active">
             Display Name
           </label>

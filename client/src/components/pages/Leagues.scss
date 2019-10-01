@@ -20,11 +20,16 @@
       }
     }
 
-    .view-button {
-      background-color: lighten($sw-or-blue, 20%);
+    .info-button {
+      background: none;
+      box-shadow: none;
+      height: 0px;
+      width: 0px;
 
-      &:hover {
-        background-color: lighten($sw-or-blue, 30%);
+      i {
+        position: relative;
+        top: -10px;
+        font-size: 22px;
       }
     }
   }

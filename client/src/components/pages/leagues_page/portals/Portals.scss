@@ -1,7 +1,7 @@
 @import 'core';
 
 .LeagueDetails {
-  position: absolute;
+  position: fixed;
   top: 0px;
   z-index: 3;
   width: 100%;
@@ -61,7 +61,7 @@
       margin: 15px;
 
       label {
-        margin: 20px 0 0 0;
+        margin: 10px 0 0 0;
         font-size: 16px;
         color: lighten($sw-or-gray, 30%);
       }
@@ -71,9 +71,13 @@
         margin: 10px 0;
       }
 
-      .ranked-points {
+      .ranked-points, .player-ranking {
         padding: 6px 0;
         font-size: 18px;
+      }
+
+      .player-ranking { 
+        text-align: right;
       }
 
       .league-dates {

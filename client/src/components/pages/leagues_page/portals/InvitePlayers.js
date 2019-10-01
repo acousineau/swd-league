@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import { createPortal } from 'react-dom'
 import { Link } from 'react-router-dom'
 
-import './LeaguePortals.scss'
+import './Portals.scss'
+import ActiveLeaguesContext from '../../../../leagues/active_leagues'
 
 const playerInvites = players => {
   let content = [
@@ -13,7 +14,7 @@ const playerInvites = players => {
 
   for (let i = 0; i < players.length; i++) {
     content.push(
-      <div key={[i]} className="player-email l-col-12">
+      <div key={[i]} className="l-col-12 player-email">
         {players[i].email ? players[i].email : players[i].label}
       </div>
     )
@@ -23,7 +24,8 @@ const playerInvites = players => {
 }
 
 const InvitePlayers = ({ email, toggle, name, start, end, win, game, playersSelected }) => {
-  const [newLeague, updateDetails] = useState({
+  const leagues = useContext(ActiveLeaguesContext)
+  const newLeague = {
     league: {
       name: name,
       start: start,
@@ -32,13 +34,13 @@ const InvitePlayers = ({ email, toggle, name, start, end, win, game, playersSele
       gamePoints: game,
       players: playersSelected
     }
-  })
+  }
 
   if (email === true) {
     return createPortal(
       <div className="LeagueDetails">
         <div className="portal-background"></div>
-        <div className="portal-container invite-portal l-grid">
+        <div className="l-grid portal-container invite-portal">
           <div className="info-container">
             {playerInvites(playersSelected)}
             <div className="l-col-12 button-container">
@@ -47,6 +49,8 @@ const InvitePlayers = ({ email, toggle, name, start, end, win, game, playersSele
                 <button
                   className="send-invite"
                   onClick={() => {
+                    leagues.push(newLeague)
+                    console.log(newLeague.league.name)
                     toggle(false)
                   }}
                 >

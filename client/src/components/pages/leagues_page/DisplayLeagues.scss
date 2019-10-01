@@ -10,10 +10,15 @@
  box-shadow: $box-shadow;
 
  .league-name {
-   font-size: 25px;
-   font-weight: 700;
-   text-transform: uppercase;
- }
+  color: $sw-or-tan;
+  font-size: 25px;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  &:hover {
+    color: lighten($sw-or-tan, 10%);
+  }
+}
 
  .avatar {
     float: left;
@@ -32,3 +37,4 @@
     color: lighten($sw-or-gray, 10%)
   }
 }
+

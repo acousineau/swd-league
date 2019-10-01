@@ -5,7 +5,7 @@
   .sign-in-card {
     width: 100%;
     max-width: 500px;
-    @include breakpoint-max(bp(large))
+    @include breakpoint-max(bp(large));
     margin: 64px auto;
     text-align: center;
     background-color: white;
@@ -24,17 +24,22 @@
     font-weight: 600;
   }
 
-  .sign-in-card-cta {
-    font-size: 22px;
-    font-weight: 400;
-    border-radius: 3px;
-    padding: 5px 10px;
-    background-color: $sw-or-brown;
-    color: white;
-    box-shadow: $box-shadow;
+  .cta-wrap {
+    margin: auto;
+    max-width: 240px !important;
 
-    &:hover {
-      background: lighten($sw-or-brown, 10%);
+    .sign-in-card-cta {
+      font-size: 20px;
+      font-weight: 500;
+      border-radius: 3px;
+      padding: 5px 8px;
+      background-color: $sw-or-brown;
+      color: white;
+      box-shadow: $box-shadow;
+
+      &:hover {
+        background: lighten($sw-or-brown, 10%);
+      }
     }
   }
 }

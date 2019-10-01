@@ -5,6 +5,7 @@ import Welcome from './pages/Welcome'
 import Dashboard from './pages/Dashboard'
 import SignIn from './pages/auth/SignIn'
 import Leagues from './pages/Leagues'
+import LeagueDetails from './pages/leagues_page/LeagueDetails'
 import NewLeague from './pages/leagues_page/NewLeague'
 
 import UserContext from '../user/context'
@@ -25,7 +26,8 @@ const AppContainer = props => {
       <Route path="/signin" component={SignIn} />
       <Route path="/signup" component={SignIn} />
       <Route path="/dashboard" component={Dashboard} />
-      <Route path="/leagues" component={Leagues} />
+      <Route exact path="/leagues" component={Leagues} />
+      <Route path="/leagues/:id" component={LeagueDetails} />
       <Route path="/newleague" component={NewLeague} />
     </div>
   )

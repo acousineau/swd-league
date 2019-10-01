@@ -1,12 +1,13 @@
 import React, { useState, useReducer } from 'react'
+
 import ActiveLeaguesContext, { LeagueReducer } from '../../../leagues/active_leagues'
 
 import './NewLeague.scss'
 import LeagueName from './LeagueName.js'
 import LeagueDates from './LeagueDates.js'
-import PointsUpdate from './LeaguePoints.js'
+import LeaguePoints from './LeaguePoints.js'
 import LeaguePlayers from './LeaguePlayers.js'
-import InvitePlayers from './InvitePlayers'
+import InvitePlayers from './portals/InvitePlayers'
 
 const NewLeague = () => {
   const [email, toggleEmail] = useState(false)
@@ -15,7 +16,7 @@ const NewLeague = () => {
   const [endDate, setEnd] = useState()
   const [winPoints, updateWin] = useState(1)
   const [gamePoints, updateGame] = useState(1)
-  const [playersSelected, updatePlayers] = useState(null)
+  const [playersSelected, updatePlayers] = useState([])
 
   return (
     <div className="NewLeague">
@@ -55,17 +56,20 @@ const NewLeague = () => {
               />
             </div>
             <div className="l-col-12 points form-section">
-              <PointsUpdate points={winPoints} update={updateWin} type="Win" />
-              <PointsUpdate points={gamePoints} update={updateGame} type="Game" />
+              <LeaguePoints points={winPoints} update={updateWin} type="Win" />
+              <LeaguePoints points={gamePoints} update={updateGame} type="Game" />
             </div>
             <div className="l-col-12 players form-section">
-              <LeaguePlayers updatePlayers={updatePlayers} />
+              <LeaguePlayers playersSelected={playersSelected} updatePlayers={updatePlayers} />
             </div>
             <div className="l-col-12 submit form-section">
               <button
                 className="submitForm"
                 disabled={!name || !startDate || !endDate || !playersSelected}
-                onClick={e => e.preventDefault(toggleEmail(true))}
+                onClick={e => {
+                  e.preventDefault()
+                  toggleEmail(true)
+                }}
               >
                 Create League
               </button>

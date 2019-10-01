@@ -5,7 +5,8 @@ import UserContext from '../../user/context'
 
 import './Leagues.scss'
 import DisplayLeagues from './leagues_page/DisplayLeagues'
-import LeagueDetails from './leagues_page/LeagueDetails'
+import DetailsPortal from './leagues_page/portals/DetailsPortal'
+import LeagueCreated from './leagues_page/LeagueCreated'
 import ActiveLeaguesContext from '../../leagues/active_leagues'
 
 const activeLeagues = (activeLeagues, toggleDetails, setKey) => {
@@ -49,7 +50,8 @@ const Leagues = () => {
 
   return (
     <div className="Leagues">
-      <LeagueDetails details={details} toggle={toggleDetails} leagueKey={detailsKey} />
+      <DetailsPortal details={details} toggle={toggleDetails} leagueKey={detailsKey} />
+      <LeagueCreated />
       <div className="l-grid">
         <div className="l-row">
           <h4 className="l-col-9 page-header">Leagues</h4>

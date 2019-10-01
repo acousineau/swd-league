@@ -1,0 +1,17 @@
+@import 'core';
+
+.EmailError {
+    z-index: 2;
+    height: 25px;
+    color: white;
+    background-color: rgb(230, 75, 75);
+    border-radius: 6px;
+    text-align: center;
+    transition: opacity 1s ease,
+                height .6s ease;
+}
+
+.hide-error {
+  height: 0px;
+  opacity: 0;
+}

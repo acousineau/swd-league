@@ -1,0 +1,66 @@
+@import "core";
+
+.DisplayParticipated, .LeagueInvite {
+  background-color: $sw-or-black;
+  color: $sw-or-tan;
+  margin: 0;
+  border-bottom: solid $sw-or-brown 2px;
+  padding: 10px;
+
+ .league-name {
+  color: $sw-or-tan;
+  font-size: 25px;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  &:hover {
+    color: lighten($sw-or-tan, 10%);
+  }
+}
+
+ .league-name {
+   font-size: 25px;
+   font-weight: 700;
+   text-transform: uppercase;
+ }
+
+  .end-date {
+    color: lighten($sw-or-gray, 20%)
+  }
+
+  .joined, .hosting {
+    font-size: 20px;
+    font-weight: 650;
+    float: right;
+  }
+
+  .joined  {
+    color: lighten($sw-or-green, 30%);
+  }
+
+  .hosting {
+    color: lighten($sw-or-maroon, 30%);
+  }
+}
+
+.LeagueInvite {
+  background-color: darken($sw-or-brown, 25%);
+
+  .invite-button-container{
+    float: right;
+
+    .accept-button, .decline-button {
+      float: right;
+      padding: 10px;
+      margin: 0 8px 8px 0;
+      width: 118px;
+    }
+    .accept-button {
+      background-color: lighten($sw-or-green, 30%);
+    }
+
+    .decline-button {
+      background-color: lighten($sw-or-maroon, 30%);
+    }
+  }
+}
